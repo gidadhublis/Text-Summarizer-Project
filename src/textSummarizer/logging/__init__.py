@@ -7,7 +7,8 @@ logging_str = "[%(asctime)s]: [%(levelname)s]: [%(module)s]: [%(message)s]"
 __name__ = "textSummarizerLogger"
 log_dir = "logs"
 log_filepath = os.path.join(log_dir, "textSummarizer.log")
-os.mkdir(log_dir, exist_ok=True)
+if log_dir != "":
+    os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
     level=logging.INFO, format=logging_str,
